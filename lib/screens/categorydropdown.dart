@@ -30,7 +30,7 @@ class _MovieCategoryState extends State<MovieCategory> {
       //     border: Border.all(color: Colors.white),
       //     ),
         child: DropdownButton(
-           borderRadius: BorderRadius.circular(30.0),
+          //  borderRadius: BorderRadius.circular(30.0),
           dropdownColor: Colors.grey[800],
           // Initial Value
           value: dropdownvalue,
