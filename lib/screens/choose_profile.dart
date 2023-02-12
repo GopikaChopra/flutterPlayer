@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:new_player/screens/profile_component.dart';
 
 class ChooseProfile extends StatefulWidget {
@@ -14,126 +14,124 @@ class _ChooseProfileState extends State<ChooseProfile> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-       scrollDirection: Axis.vertical,
-child:    Container(
-      
-      child: Padding(
-        
-          padding: const EdgeInsets.all(10),
-          child: ListView(
-             shrinkWrap: true,
-            children: <Widget>[
-              
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.all(10),
-                      child: const Text(
-                        '',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 255, 251, 251),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30),
-                      )),
-                  Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.all(10),
-                      child: const Text(
-                        'CHOOSE PROFILE',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 253, 247, 247),
-                            fontWeight: FontWeight.w800,
-                            fontSize: 20),
-                      )),
-                  Container(
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.all(10),
-                    child: const Icon(
-                      Icons.warning,
-                      color: Colors.white,
-                      size: 30.0,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    height: 50,
-                    width: 350,
-                    padding: const EdgeInsets.all(10.0),
-                    child: const Text(
-                      'Edit',
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 15,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                child: GridView.count(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 10.0,
-                    shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        child: Container(
+          child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: ListView(
+                shrinkWrap: true,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ...List.generate(
-                        3,
-                        (index) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: Container(
-                                padding: const EdgeInsets.only(
-                                    left: 30.0, top: 12.0),
-                                alignment: Alignment.center,
-                                child: const ProfileComponent()),
-                          );
-                        },
-                      ),
                       Container(
-                        height: 150,
-                        width: 100,
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.all(10),
+                          child: const Text(
+                            '',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 251, 251),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 30),
+                          )),
+                      Container(
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.all(10),
+                          child: const Text(
+                            'CHOOSE PROFILE',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 253, 247, 247),
+                                fontWeight: FontWeight.w800,
+                                fontSize: 20),
+                          )),
+                      Container(
                         alignment: Alignment.center,
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              height: 100.0,
-                              width: 100.0,
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: Colors.white),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(20))),
-                              child: const Center(
-                                  child: Icon(Icons.add, color: Colors.white)),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.only(left: 14.0),
-                              margin: const EdgeInsets.only(top: 100.0),
-                              child: const Text(
-                                "create new",
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 253, 247, 247),
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ),
-                          ],
+                        padding: const EdgeInsets.all(10),
+                        child: const Icon(
+                          Icons.warning,
+                          color: Colors.white,
+                          size: 30.0,
                         ),
-                      )
-                    ]),
-              ),
-            ],
-          )),
-    )
-    );
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 350,
+                        padding: const EdgeInsets.all(10.0),
+                        child: const Text(
+                          'Edit',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: GridView.count(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 10.0,
+                        mainAxisSpacing: 10.0,
+                        shrinkWrap: true,
+                        children: [
+                          ...List.generate(
+                            3,
+                            (index) {
+                              return Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 8.0),
+                                child: Container(
+                                    padding: const EdgeInsets.only(
+                                        left: 30.0, top: 12.0),
+                                    alignment: Alignment.center,
+                                    child: const ProfileComponent()),
+                              );
+                            },
+                          ),
+                          Container(
+                            height: 150,
+                            width: 100,
+                            alignment: Alignment.center,
+                            child: Stack(
+                              children: <Widget>[
+                                Container(
+                                  height: 100,
+                                  width: 100.0,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          width: 2, color: Colors.white),
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(20))),
+                                  child: const Center(
+                                      child:
+                                          Icon(Icons.add, color: Colors.white)),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.only(left: 14.0),
+                                  margin: const EdgeInsets.only(top: 100.0),
+                                  child: const Text(
+                                    "create new",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 253, 247, 247),
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ]),
+                  ),
+                ],
+              )),
+        ));
   }
 }
