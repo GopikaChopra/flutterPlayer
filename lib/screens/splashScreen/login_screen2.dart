@@ -35,10 +35,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           width: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: const AssetImage('assets/images/login_bg.png'),
+              image: const AssetImage('assets/images/4-layers.png'),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                Color.fromARGB(255, 12, 12, 12).withOpacity(0.5),
+                Color.fromARGB(255, 12, 12, 12).withOpacity(0.9),
                 BlendMode.srcOver,
               ),
             ),
