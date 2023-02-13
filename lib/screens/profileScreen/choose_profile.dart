@@ -13,68 +13,90 @@ class ChooseProfile extends StatefulWidget {
 class _ChooseProfileState extends State<ChooseProfile> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: ListView(
-                shrinkWrap: true,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.all(10),
-                          child: const Text(
-                            '',
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 255, 251, 251),
-                                fontWeight: FontWeight.w500,
-                                fontSize: 30),
-                          )),
-                      Container(
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.all(10),
-                          child: const Text(
-                            'CHOOSE PROFILE',
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 253, 247, 247),
-                                fontWeight: FontWeight.w800,
-                                fontSize: 20),
-                          )),
-                      Container(
-                        alignment: Alignment.center,
-                        padding: const EdgeInsets.all(10),
-                        child: const Icon(
-                          Icons.warning,
-                          color: Colors.white,
-                          size: 30.0,
+    return Container(
+      child: Container(
+        child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: <Widget>[
+                Stack(
+                  children: [
+                    Container(
+                      height: 150,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/Group_5.webp"),
+                          fit: BoxFit.cover,
                         ),
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 350,
-                        padding: const EdgeInsets.all(10.0),
-                        child: const Text(
-                          'Edit',
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
-                            decoration: TextDecoration.underline,
+                    ),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(30.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                  alignment: Alignment.center,
+                                  padding: const EdgeInsets.all(10),
+                                  child: const Text(
+                                    '',
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 255, 251, 251),
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 30),
+                                  )),
+                              Container(
+                                  alignment: Alignment.center,
+                                  padding: const EdgeInsets.all(10),
+                                  child: const Text(
+                                    'CHOOSE PROFILE',
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 253, 247, 247),
+                                        fontWeight: FontWeight.w800,
+                                        fontSize: 20),
+                                  )),
+                              Container(
+                                alignment: Alignment.center,
+                                padding: const EdgeInsets.all(10),
+                                child: const Icon(
+                                  Icons.warning,
+                                  color: Colors.white,
+                                  size: 30.0,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Container(
+                        Row(
+                          children: [
+                            Container(
+                              height: 50,
+                              width: 350,
+                              padding: const EdgeInsets.all(10.0),
+                              child: const Text(
+                                'Edit',
+                                textAlign: TextAlign.right,
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Expanded(
+                  child: Container(
                     child: GridView.count(
                         crossAxisCount: 2,
                         crossAxisSpacing: 10.0,
@@ -130,8 +152,30 @@ class _ChooseProfileState extends State<ChooseProfile> {
                           )
                         ]),
                   ),
-                ],
-              )),
-        ));
+                ),
+              ],
+            )),
+            //  alignment: Alignment.bottomRight,
+            // child: SizedBox(
+            //   height: 90,
+            //   width: 80,
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       image: DecorationImage(
+            //         image: const AssetImage('assets/images/Layer_10.webp'),
+            //         fit: BoxFit.fill,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+      ),
+      // foregroundDecoration: BoxDecoration(
+      //                   image: DecorationImage(
+      //                     image: AssetImage("assets/images/Group_5.webp"),
+      //                     fit: BoxFit.cover,
+      //                   ),
+      //                 ),
+    );
+
   }
 }

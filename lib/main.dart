@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'package:new_player/screens/movie_screen_view.dart';
+import 'package:new_player/screens/profileScreen/choose_profile.dart';
+import 'package:new_player/screens/splashScreen/login_screen2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,6 +51,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Container(
             height: MediaQuery.of(context).size.height,
             color: const Color.fromARGB(255, 0, 0, 0),
-            child: const MovieScreenView()));
+            child: const ChooseProfile()));
   }
 }

@@ -16,30 +16,41 @@ class _ProfileComponentState extends State<ProfileComponent> {
       child: Stack(
         children: [
           Container(
-            height: 150,
-            width: 130,
+            height: 160,
+            width: 140,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.green,
-              boxShadow: [
-                const BoxShadow(color: Color.fromARGB(255, 2, 53, 3), spreadRadius: 3),
-              ],
+              borderRadius: BorderRadius.all(Radius.circular(12.0)),
+              image: DecorationImage(
+                image: const AssetImage('assets/images/Rectangle_3.webp'),
+                fit: BoxFit.cover,
+              ),
             ),
-    
             alignment: Alignment.bottomRight,
-          
-            child: Icon(Icons.person, color: Colors.orange, size: 100.0,),
+            child: SizedBox(
+              height: 90,
+              width: 80,
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: const AssetImage('assets/images/Layer_10.webp'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            ),
           ),
-          Container(
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.all(10.0),
-              child: const Text(
-                'Admin',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22.0),
-              )),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              "Admin",
+              style: TextStyle(
+                  color: Colors.white.withOpacity(0.8),
+                  fontSize: 18.0,
+                  height: 1.4,
+                  fontWeight: FontWeight.w600),
+              textAlign: TextAlign.center,
+            ),
+          ),
         ],
       ),
     );
