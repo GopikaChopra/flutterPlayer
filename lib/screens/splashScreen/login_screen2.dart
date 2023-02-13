@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new_player/utils/dimensions.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -9,10 +8,8 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  void _register() async {}
+  final TextEditingController _urlController = TextEditingController();
+  final TextEditingController _linkController = TextEditingController();
 
   void _singIn() async {}
 
@@ -20,6 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   void initState() {
     super.initState();
+    _urlController.text = "http://";
   }
 
   @override
@@ -54,12 +52,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: 180,
-                      width: 120,
+                      height: 190,
+                      width: 160,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage("assets/images/iptv.png"),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
@@ -99,79 +97,84 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             TextFormField(
-                              decoration: const InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      // borderSide: BorderSide(
-                                      //   width: 1,
-                                      // )
-                                      borderSide: BorderSide(
-                                          color:
-                                              Color.fromARGB(66, 202, 28, 28),
-                                          width: 0)),
-                                  filled: true, //<-- SEE HERE
-                                  fillColor: Color.fromARGB(255, 232, 231, 233),
-                                  prefixText: "http://",
-                                  prefixStyle: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 20,
-                                      fontWeight:
-                                          FontWeight.w500) //<-- SEE HERE
+                              controller: _urlController,
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 16, horizontal: 10),
+
+                                hintText: "http://link",
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromARGB(255, 33, 210, 71),
                                   ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromARGB(255, 33, 210, 71),
+                                  ),
+                                ),
+
+                                border: const OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12)),
+                                ),
+                                filled: true, //<-- SEE HERE
+                                fillColor:
+                                    const Color.fromARGB(255, 232, 231, 233),
+                              ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             TextFormField(
-                              decoration: const InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10)),
-                                    // borderSide: BorderSide(
-                                    //   width: 1,
-                                    // )
-                                    // side: BorderSide(width: 5.0, color: Colors.blue),
-                                    // borderSide: BorderSide(
-                                    //     color: Color.fromARGB(66, 202, 28, 28),
-                                    //     width: 2)
-                                    borderSide: BorderSide(
-                                        width: 3, color: Colors.greenAccent)),
+                              // initialValue: "http://",
+                              // initialValue: ,
+                              controller: _linkController,
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 16, horizontal: 10),
+                                hintText: "Enter EPG URL(Optional)",
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromARGB(255, 33, 210, 71),
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromARGB(255, 33, 210, 71),
+                                  ),
+                                ),
+
+                                border: const OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12)),
+                                ),
                                 filled: true, //<-- SEE HERE
                                 fillColor: Color.fromARGB(255, 232, 231, 233),
-                                labelText: 'EnterEPG URL(Optional)',
-                                // prefixText: "http://",
-                                // prefixStyle: TextStyle(
-                                //     color: Colors.black,
-                                //     fontSize: 20,
-                                //     fontWeight:
-                                //         FontWeight.w500) //<-- SEE HERE
+                                // labelText: 'Enter EPG URL(Optional)',
                               ),
                             ),
-                            // new Container(
-                            //     padding: const EdgeInsets.only(
-                            //         left: 130.0, top: 40.0),
-                            //     child: new ElevatedButton(
-                            //       child: const Text('Submit'),
-                            //       onPressed: null,
-                            //     )),
-                            SizedBox(
+                            const SizedBox(
                               height: 30,
                             ),
                             SizedBox(
                               width: double.infinity,
                               child: OutlinedButton(
                                 style: OutlinedButton.styleFrom(
-                                  // backgroundColor: Color.(84af35),
-                                  // backgroundColor: Color(0xFFbfeb91),
                                   backgroundColor:
-                                      Color.fromRGBO(132, 175, 53, 10),
-                                  // padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                                  padding: EdgeInsets.all(15),
+                                      const Color.fromRGBO(132, 175, 53, 10),
+                                  padding: const EdgeInsets.all(15),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
-                                  // side: BorderSide(width: 2, color: Colors.green),
                                   side: const BorderSide(
                                       width: 1.0, color: Colors.grey),
                                 ),
@@ -183,15 +186,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                       fontSize: 15.0),
                                 ),
                                 onPressed: () async {
-                                  final email = _emailController.text;
-                                  final password = _passwordController.text;
-                                  if (email.isEmpty || password.isEmpty) {
+                                  final url = _urlController.text;
+                                  final link = _linkController.text;
+                                  if (url.isEmpty || link.isEmpty) {
                                     showDialog(
                                         context: context,
                                         builder: (_) => AlertDialog(
                                               title: const Text('Error'),
                                               content: const Text(
-                                                  'Please enter your email and password'),
+                                                  'Please enter details'),
                                               actions: [
                                                 TextButton(
                                                   child: const Text('OK'),
@@ -211,94 +214,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ],
                         ),
                       )
-                      // TextField(
-                      //   controller: _emailController,
-                      //   autofocus: false,
-                      //   autocorrect: false,
-                      //   enableSuggestions: false,
-                      //   decoration: const InputDecoration(
-                      //       border: OutlineInputBorder(
-                      //           // borderRadius:
-                      //           //     BorderRadius.all(Radius.circular(12)),
-                      //           // borderSide: BorderSide(
-                      //           //   width: 1,
-                      //           // )
-                      //           borderSide: const BorderSide(color: Color.fromARGB(255, 151, 30, 30), width: 0.0),
-                      //           ),
-                      //       filled: true,
-                      //       fillColor: Colors.white,
-                      //       // labelText: '',
-                      //       floatingLabelStyle: TextStyle(
-                      //           color: Colors.black,
-                      //           fontSize: 20,
-                      //           fontWeight: FontWeight.w500),
-                      //       focusedBorder: InputBorder.none,
-                      //       // border: InputBorder.none,
-                      //       prefixText: "http://",
-                      //       prefixStyle: const TextStyle(
-                      //           color: Colors.black,
-                      //           fontSize: 20,
-                      //           fontWeight: FontWeight.w500)),
-                      // ),
-                      // SizedBox(height: 20),
-                      // TextField(
-                      //   controller: _passwordController,
-                      //   obscureText: true,
-                      //   autofocus: false,
-                      //   autocorrect: false,
-                      //   enableSuggestions: false,
-                      //   decoration: const InputDecoration(
-                      //     filled: true,
-                      //     fillColor: Colors.white,
-                      //     labelText: 'EnterEPG URL(Optional)',
-                      //     floatingLabelStyle: TextStyle(color: Colors.black),
-                      //     focusedBorder: InputBorder.none,
-                      //     border: InputBorder.none,
-                      //   ),
-                      // ),
-                      // const SizedBox(height: 20.0),
-                      // SizedBox(
-                      //   width: double.infinity,
-                      //   child: OutlinedButton(
-                      //     style: OutlinedButton.styleFrom(
-                      //       backgroundColor: Colors.green,
-                      //       padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                      //       side: const BorderSide(
-                      //           width: 1.0, color: Colors.grey),
-                      //     ),
-                      //     child: const Text(
-                      //       "Download",
-                      //       style: TextStyle(
-                      //           color: Colors.white,
-                      //           fontWeight: FontWeight.bold,
-                      //           fontSize: 22.0),
-                      //     ),
-                      //     onPressed: () async {
-                      //       final email = _emailController.text;
-                      //       final password = _passwordController.text;
-                      //       if (email.isEmpty || password.isEmpty) {
-                      //         showDialog(
-                      //             context: context,
-                      //             builder: (_) => AlertDialog(
-                      //                   title: const Text('Error'),
-                      //                   content: const Text(
-                      //                       'Please enter your email and password'),
-                      //                   actions: [
-                      //                     TextButton(
-                      //                       child: const Text('OK'),
-                      //                       onPressed: () => Navigator.of(
-                      //                               context,
-                      //                               rootNavigator: true)
-                      //                           .pop('dialog'),
-                      //                     )
-                      //                   ],
-                      //                 ));
-                      //         return;
-                      //       }
-                      //       _singIn();
-                      //     },
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
@@ -306,132 +221,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ],
           ),
         ),
-
-        // Container(
-        //   padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
-        //   child: Column(
-        //     crossAxisAlignment: CrossAxisAlignment.center,
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: [
-        //       const SizedBox(height: 50),
-        //       Container(
-        //         height: 180,
-        //         width: 120,
-        //         decoration: const BoxDecoration(
-        //           image: DecorationImage(
-        //             image: AssetImage("assets/images/iptv.png"),
-        //             fit: BoxFit.cover,
-        //           ),
-        //         ),
-        //       ),
-        //       Center(
-        //         child: RichText(
-        //           text: const TextSpan(
-        //             text: 'IPTV ',
-        //             style: TextStyle(
-        //                 fontWeight: FontWeight.w500,
-        //                 color: Colors.white,
-        //                 fontSize: 30),
-        //             children: <TextSpan>[
-        //               TextSpan(
-        //                   text: 'FALCONS',
-        //                   style: TextStyle(
-        //                       fontWeight: FontWeight.w900,
-        //                       color: Colors.white,
-        //                       fontSize: 30)),
-        //             ],
-        //           ),
-        //         ),
-        //       ),
-        //       const SizedBox(height: 100), // Dimensions.height10),
-        //       TextField(
-        //         controller: _emailController,
-        //         autofocus: false,
-        //         autocorrect: false,
-        //         enableSuggestions: false,
-        //         decoration: const InputDecoration(
-        //             border: OutlineInputBorder(
-        //                 borderRadius: BorderRadius.all(Radius.circular(4)),
-        //                 borderSide: BorderSide(
-        //                   width: 1,
-        //                 )),
-        //             filled: true,
-        //             fillColor: Colors.white,
-        //             labelText: '',
-        //             floatingLabelStyle: TextStyle(
-        //                 color: Colors.black,
-        //                 fontSize: 20,
-        //                 fontWeight: FontWeight.w500),
-        //             focusedBorder: InputBorder.none,
-        //             // border: InputBorder.none,
-        //             prefixText: "http://",
-        //             prefixStyle: const TextStyle(
-        //                 color: Colors.black,
-        //                 fontSize: 20,
-        //                 fontWeight: FontWeight.w500)),
-        //       ),
-        //       SizedBox(
-        //         height: 20,
-        //       ),
-        //       TextField(
-        //         controller: _passwordController,
-        //         obscureText: true,
-        //         autofocus: false,
-        //         autocorrect: false,
-        //         enableSuggestions: false,
-        //         decoration: const InputDecoration(
-        //           filled: true,
-        //           fillColor: Colors.white,
-        //           labelText: 'EnterEPG URL(Optional)',
-        //           floatingLabelStyle: TextStyle(color: Colors.black),
-        //           focusedBorder: InputBorder.none,
-        //           border: InputBorder.none,
-        //         ),
-        //       ),
-        //       const SizedBox(height: 20.0),
-        //       SizedBox(
-        //         width: double.infinity,
-        //         child: OutlinedButton(
-        //           style: OutlinedButton.styleFrom(
-        //             backgroundColor: Colors.green,
-        //             padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-        //             side: const BorderSide(width: 1.0, color: Colors.grey),
-        //           ),
-        //           child: const Text(
-        //             "Download",
-        //             style: TextStyle(
-        //                 color: Colors.white,
-        //                 fontWeight: FontWeight.bold,
-        //                 fontSize: 22.0),
-        //           ),
-        //           onPressed: () async {
-        //             final email = _emailController.text;
-        //             final password = _passwordController.text;
-        //             if (email.isEmpty || password.isEmpty) {
-        //               showDialog(
-        //                   context: context,
-        //                   builder: (_) => AlertDialog(
-        //                         title: const Text('Error'),
-        //                         content: const Text(
-        //                             'Please enter your email and password'),
-        //                         actions: [
-        //                           TextButton(
-        //                             child: const Text('OK'),
-        //                             onPressed: () => Navigator.of(context,
-        //                                     rootNavigator: true)
-        //                                 .pop('dialog'),
-        //                           )
-        //                         ],
-        //                       ));
-        //               return;
-        //             }
-        //             _singIn();
-        //           },
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // )
       ],
     );
   }
@@ -439,8 +228,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-
-    _emailController.text = "";
 
     return Scaffold(
         extendBodyBehindAppBar: true,

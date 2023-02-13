@@ -318,35 +318,33 @@ class _HomePageScreenState extends State<HomePageScreen> {
             children: [
               Stack(
                 children: [
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                        top: 15,
-                      ),
-                      height: 210,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 50,
-                        itemBuilder: (BuildContext ctx, index) {
-                          return Container(
-                            margin: EdgeInsets.only(
-                                left: index == 0 ? 38 : 12,
-                                top: 0,
-                                right: 0,
-                                bottom: 15),
-                            // height: 90,
-                            width: 110,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/images/joker.jpg'),
-                                fit: BoxFit.fill,
-                              ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      top: 15,
+                    ),
+                    height: 210,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 50,
+                      itemBuilder: (BuildContext ctx, index) {
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: index == 0 ? 38 : 12,
+                              top: 0,
+                              right: 0,
+                              bottom: 15),
+                          // height: 90,
+                          width: 110,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/images/joker.jpg'),
+                              fit: BoxFit.fill,
                             ),
-                          );
-                        },
-                      ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Positioned(
@@ -384,35 +382,33 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
               Stack(
                 children: [
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                        top: 15,
-                      ),
-                      height: 210,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 50,
-                        itemBuilder: (BuildContext ctx, index) {
-                          return Container(
-                            margin: EdgeInsets.only(
-                                left: index == 0 ? 38 : 12,
-                                top: 0,
-                                right: 0,
-                                bottom: 15),
-                            // height: 90,
-                            width: 110,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/images/joker.jpg'),
-                                fit: BoxFit.fill,
-                              ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      top: 15,
+                    ),
+                    height: 210,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 50,
+                      itemBuilder: (BuildContext ctx, index) {
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: index == 0 ? 38 : 12,
+                              top: 0,
+                              right: 0,
+                              bottom: 15),
+                          // height: 90,
+                          width: 110,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/images/joker.jpg'),
+                              fit: BoxFit.fill,
                             ),
-                          );
-                        },
-                      ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Positioned(
@@ -450,35 +446,33 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
               Stack(
                 children: [
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                        top: 15,
-                      ),
-                      height: 210,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 50,
-                        itemBuilder: (BuildContext ctx, index) {
-                          return Container(
-                            margin: EdgeInsets.only(
-                                left: index == 0 ? 38 : 12,
-                                top: 0,
-                                right: 0,
-                                bottom: 15),
-                            // height: 90,
-                            width: 110,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/images/joker.jpg'),
-                                fit: BoxFit.fill,
-                              ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      top: 15,
+                    ),
+                    height: 210,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 50,
+                      itemBuilder: (BuildContext ctx, index) {
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: index == 0 ? 38 : 12,
+                              top: 0,
+                              right: 0,
+                              bottom: 15),
+                          // height: 90,
+                          width: 110,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/images/joker.jpg'),
+                              fit: BoxFit.fill,
                             ),
-                          );
-                        },
-                      ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Positioned(
@@ -516,35 +510,33 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
               Stack(
                 children: [
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                        top: 15,
-                      ),
-                      height: 210,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 50,
-                        itemBuilder: (BuildContext ctx, index) {
-                          return Container(
-                            margin: EdgeInsets.only(
-                                left: index == 0 ? 38 : 12,
-                                top: 0,
-                                right: 0,
-                                bottom: 15),
-                            // height: 90,
-                            width: 110,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/images/joker.jpg'),
-                                fit: BoxFit.fill,
-                              ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      top: 15,
+                    ),
+                    height: 210,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 50,
+                      itemBuilder: (BuildContext ctx, index) {
+                        return Container(
+                          margin: EdgeInsets.only(
+                              left: index == 0 ? 38 : 12,
+                              top: 0,
+                              right: 0,
+                              bottom: 15),
+                          // height: 90,
+                          width: 110,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/images/joker.jpg'),
+                              fit: BoxFit.fill,
                             ),
-                          );
-                        },
-                      ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Positioned(
