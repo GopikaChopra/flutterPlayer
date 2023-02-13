@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:new_player/screens/categorydropdown.dart';
+import 'package:new_player/screens/homepage/categorydropdown.dart';
 
 class MoviesScreen extends StatefulWidget {
   const MoviesScreen({super.key});

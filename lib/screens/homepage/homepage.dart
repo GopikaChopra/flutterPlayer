@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../categorydropdown.dart';
+import 'categorydropdown.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});

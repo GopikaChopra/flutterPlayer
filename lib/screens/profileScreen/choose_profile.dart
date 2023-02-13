@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:new_player/screens/profile_component.dart';
+import 'package:new_player/screens/profileScreen/profile_component.dart';
 
 class ChooseProfile extends StatefulWidget {
   const ChooseProfile({super.key});
