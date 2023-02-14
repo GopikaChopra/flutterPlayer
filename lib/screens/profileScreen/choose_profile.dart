@@ -53,17 +53,22 @@ class _ChooseProfileState extends State<ChooseProfile> {
                             'CHOOSE PROFILE',
                             style: TextStyle(
                                 color: Color.fromARGB(255, 253, 247, 247),
-                                fontWeight: FontWeight.w800,
-                                fontSize: 20),
+                                fontWeight: FontWeight.w900,
+                                fontSize: 22),
                           )),
                       Container(
                         alignment: Alignment.center,
                         padding: const EdgeInsets.all(10),
-                        child: const Icon(
-                          Icons.warning,
-                          color: Colors.white,
-                          size: 30.0,
-                        ),
+                        child:  Container(
+                          height: 20,
+              width: 20,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image:  AssetImage('assets/images/information.webp'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
                       ),
                     ],
                   ),
@@ -72,14 +77,17 @@ class _ChooseProfileState extends State<ChooseProfile> {
                   children: [
                     Container(
                       height: 50,
-                      width: 350,
-                      padding: const EdgeInsets.all(10.0),
+                      width: MediaQuery.of(context).size.width,
+                      // color: Colors.amberAccent,
+                      // padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.only(
+                      top: 20, bottom: 10, left: 0, right: 25),
                       child: const Text(
-                        'Edit',
+                        'EDIT',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontSize: 15,
                           decoration: TextDecoration.underline,
                         ),

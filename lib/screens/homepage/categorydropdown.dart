@@ -42,7 +42,7 @@ class _MovieCategoryState extends State<MovieCategory> {
                     style: TextStyle(
                         color: Color.fromARGB(255, 238, 232, 232),
                         // fontWeight: FontWeight.w500,
-                        fontSize: 22)),
+                        fontSize: 18)),
               );
             }).toList(),
             // After selecting the desired option,it will

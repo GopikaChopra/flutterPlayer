@@ -234,7 +234,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ),
                   Container(
                     height: 40.h,
-                    width: 130.w,
+                    width: 100.w,
                     alignment: Alignment.center,
                     padding:
                         const EdgeInsets.symmetric(horizontal: 0, vertical: 0),

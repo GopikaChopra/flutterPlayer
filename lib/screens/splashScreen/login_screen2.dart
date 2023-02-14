@@ -107,14 +107,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   borderRadius: BorderRadius.circular(12.0),
                                   borderSide: const BorderSide(
                                     width: 2,
-                                    color: Color.fromARGB(255, 33, 210, 71),
+                                    color: Color.fromRGBO(132, 175, 53, 10),
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12.0),
                                   borderSide: const BorderSide(
                                     width: 2,
-                                    color: Color.fromARGB(255, 33, 210, 71),
+                                    color: Color.fromRGBO(132, 175, 53, 10),
                                   ),
                                 ),
 
@@ -142,14 +142,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   borderRadius: BorderRadius.circular(12.0),
                                   borderSide: const BorderSide(
                                     width: 2,
-                                    color: Color.fromARGB(255, 33, 210, 71),
+                                    color: Color.fromRGBO(132, 175, 53, 10),
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12.0),
                                   borderSide: const BorderSide(
                                     width: 2,
-                                    color: Color.fromARGB(255, 33, 210, 71),
+                                    color: Color.fromRGBO(132, 175, 53, 10),
                                   ),
                                 ),
 

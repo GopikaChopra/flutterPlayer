@@ -28,10 +28,12 @@ class _MovieScreenViewState extends State<MovieScreenView> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
+        
         body: screens[selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.transparent,
+          // backgroundColor:Color.fromARGB(100, 22, 44, 33),
+          backgroundColor: Colors.black.withOpacity(0.9),
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white.withOpacity(.60),
           selectedFontSize: 15,
