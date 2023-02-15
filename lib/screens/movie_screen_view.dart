@@ -24,12 +24,34 @@ class _MovieScreenViewState extends State<MovieScreenView> {
     const SettingsPage()
   ];
   int selectedIndex = 0;
+
+
+
+  Map<int ,List<Widget>> pages={
+    0:[const HomePageScreen(),Text("necghcghchj",style: TextStyle(
+      color: Colors.white,
+      fontSize: 40
+    ),)],
+    1:[const Text("dfs")],
+    2:[const DownloadPage(),],
+    3:[const SettingsPage(),],
+
+  };
+
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
+    // print(pages[selectedIndex]![pages[selectedIndex]!.length-1]);
     return Scaffold(
         backgroundColor: Colors.black,
         
-        body: screens[selectedIndex],
+        body: screens[selectedIndex],// pages[selectedIndex]![pages[selectedIndex]!.length-1],//     screens[selectedIndex],          // pages[selectedIndex]![pages[selectedIndex]!.length-1],                       //,
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           // backgroundColor:Color.fromARGB(100, 22, 44, 33),

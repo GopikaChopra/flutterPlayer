@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_player/widgets/movie_poster.dart';
 
 import 'categorydropdown.dart';
 
@@ -329,20 +330,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
                       itemCount: 50,
                       itemBuilder: (BuildContext ctx, index) {
                         return Container(
-                          margin: EdgeInsets.only(
-                              left: index == 0 ? 38 : 12,
-                              top: 0,
-                              right: 0,
-                              bottom: 15),
-                          // height: 90,
-                          width: 110,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/joker.jpg'),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                            margin: EdgeInsets.only(
+                                left: index == 0 ? 38 : 12,
+                                top: 0,
+                                right: 0,
+                                bottom: 15),
+                            child: const MoviePoster()
                         );
                       },
                     ),
