@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:new_player/screens/movie_screen_view.dart';
-import 'package:new_player/screens/profileScreen/profile_component.dart';
-import 'package:new_player/screens/searchScreen/movie_category.dart';
 import 'package:new_player/screens/searchScreen/search_page.dart';
 import 'package:new_player/widgets/movie_poster.dart';
 
@@ -24,7 +22,6 @@ class _SingleCategoryMoviesState extends State<SingleCategoryMovies> {
           flex: 1,
           child: Container(
             width: MediaQuery.of(context).size.width,
-            // height: MediaQuery.of(context).size.height,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/backgroundposter.webp"),
@@ -38,21 +35,28 @@ class _SingleCategoryMoviesState extends State<SingleCategoryMovies> {
                   children: [
                     Row(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 30,
                         ),
-                        IconButton(
-                          iconSize: 10,
-                          icon: const Icon(Icons.arrow_back_ios_new_outlined, color: Colors.white,size: 30),
-                          onPressed: () {
-                            // ...
-                          },
+                        InkWell(
+                          onTap: (){
+                            // print("tapped");
+                            Navigator.pushReplacement(
+                              context,MaterialPageRoute(builder: (context) => MovieScreenView() //here pass the actual values of these variables, for example false if the payment isn't successfull..etc
+                            ),);
+                            },
+                          child: const  Icon(
+                            Icons.arrow_back_ios_new_outlined,
+                            color: Colors.white,
+                            // size: 36.0,
+                          ),
                         ),
-                        SizedBox(
+
+                        const SizedBox(
                           width: 70,
                         ),
-                        Text("ANIMATION",style: TextStyle(
-                          fontSize: 22,
+                        const Text("ANIMATION",style: TextStyle(
+                          fontSize: 25,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),
@@ -64,13 +68,8 @@ class _SingleCategoryMoviesState extends State<SingleCategoryMovies> {
 
                     Expanded(
                       child: Container(
-                        // height: 200,
                           padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
-                          // height: MediaQuery.of(context).size.height,
-                          // color: Colors.lime,
                           child: GridView.count(
-                            // physics: ,
-                            // physics: NeverScrollableScrollPhysics(),
                               crossAxisCount: 3,
                               crossAxisSpacing: 15.0,
                               mainAxisSpacing: 15.0,

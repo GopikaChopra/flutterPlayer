@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_player/screens/homepage/homepage.dart';
+import 'package:new_player/screens/homepage/livepage.dart';
 
 import 'package:new_player/screens/movie_screen_view.dart';
 import 'package:new_player/screens/profileScreen/choose_profile.dart';
 import 'package:new_player/screens/profileScreen/profile_component.dart';
+import 'package:new_player/screens/searchScreen/live_category.dart';
 import 'package:new_player/screens/searchScreen/single_category_movie.dart';
+import 'package:new_player/screens/searchScreen/single_live_category.dart';
 import 'package:new_player/screens/splashScreen/login_screen2.dart';
+import 'package:new_player/screens/splashScreen/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,6 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Container(
             height: MediaQuery.of(context).size.height,
             color: const Color.fromARGB(255, 0, 0, 0),
-            child: const MovieScreenView())); //const ChooseProfile() //SingleCategoryMovies
+            child: const LivePage())); //const ChooseProfile() //MovieScreenView //SingleLiveCategory //SingleCategoryMovies // SignupScreen
   }
 }

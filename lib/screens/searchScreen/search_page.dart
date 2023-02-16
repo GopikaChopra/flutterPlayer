@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:new_player/screens/homepage/categorydropdown.dart';
+import 'package:new_player/screens/searchScreen/live_category.dart';
 import 'package:new_player/screens/searchScreen/movie_category.dart';
+import 'package:new_player/screens/searchScreen/series_category.dart';
 import 'package:new_player/screens/searchScreen/single_category_movie.dart';
 import 'package:tab_container/tab_container.dart';
 
@@ -12,7 +14,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  var newradius = Radius.circular(10);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class _SearchPageState extends State<SearchPage> {
               )),
         ),
         DefaultTabController(
-            length: 4, // length of tabs
+            length: 3, // length of tabs
             initialIndex: 0,
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -51,37 +52,24 @@ class _SearchPageState extends State<SearchPage> {
                   Container(
                     padding:
                     EdgeInsets.symmetric(horizontal: 30, vertical: 0),
-                    // decoration: BoxDecoration(
-                    //   borderRadius: BorderRadius.circular(50),
-                    //   color: Colors.cyanAccent
-                    // ),
                     child: const TabBar(
-                      // labelPadding: EdgeInsets.symmetric(horizontal: 50.0),
-                      // indicator: BoxDecoration(
-                      //   // borderRadius: BorderRadius.circular(12),
-                      //   color: Color.fromARGB(255, 61, 54, 54),
-                      // ),
-                      // splashBorderRadius: BorderRadius.circular(40),
                       indicator: ShapeDecoration(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight:  Radius.circular(10), topLeft:  Radius.circular(10),  bottomRight: Radius.circular(0),
                               bottomLeft: Radius.circular(0))
                           ),
                           color: Color.fromARGB(255, 61, 54, 54)
                       ),
-                      // indicatorSize: TabBarIndicatorSize.label,
                       labelColor: Color.fromARGB(255, 227, 236, 228),
                       unselectedLabelColor:
                           Color.fromARGB(255, 233, 225, 225),
                       tabs: [
                         Tab(text: 'Movies'),
-                        Tab(text: 'TV shows'),
-                        Tab(text: 'Events'),
-                        Tab(text: 'Channel'),
+                        Tab(text: 'Web Series'),
+                        Tab(text: 'Live'),
                       ],
                     ),
                   ),
                   Container(
-                      // padding: EdgeInsets.all(20),
                       padding:
                           EdgeInsets.symmetric(horizontal: 30, vertical: 0),
                       height: 700,
@@ -92,12 +80,10 @@ class _SearchPageState extends State<SearchPage> {
                             children: [
                               Container(
                                 width: double.infinity,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.only(topRight:  Radius.circular(10), topLeft:  Radius.circular(0),  bottomRight: Radius.circular(10),
                                     bottomLeft: Radius.circular(10)),
-                                  // borderRadius: BorderRadius.circular(10),
                                   color: Color.fromARGB(255, 61, 54, 54),
-
                                 ),
 
                                 // height: 10,
@@ -123,8 +109,6 @@ class _SearchPageState extends State<SearchPage> {
                               Container(
                                 height: 50,
                                 width: MediaQuery.of(context).size.width,
-                                // color: Colors.amberAccent,
-                                // padding: const EdgeInsets.all(10.0),
                                 padding: const EdgeInsets.only(
                                     top: 20, bottom: 0, left: 10, right: 10),
                                 child: const Text(
@@ -142,13 +126,10 @@ class _SearchPageState extends State<SearchPage> {
                                 child: ListView.builder(
                                   scrollDirection: Axis.vertical,
                                   itemCount: 8,
-                                  //  physics: NeverScrollableScrollPhysics(),
-                                  // physics: AlwaysScrollableScrollPhysics(),
                                   itemBuilder: (BuildContext ctx, int index) {
                                     return Container(
                             padding: const EdgeInsets.only(
                         top: 10, bottom: 10, left: 0, right: 0),
-                          // color: Color.fromARGB(255, 44, 122, 44),
                           child: SearchMovieCategory(),
                         );
                                   },
@@ -158,32 +139,132 @@ class _SearchPageState extends State<SearchPage> {
                           ),
                         ),
                         Container(
-                          child: const Center(
-                            child: Text('Display Tab 2',
-                                style: TextStyle(
-                                    fontSize: 22,
-                                    color: Colors.amberAccent,
-                                    fontWeight: FontWeight.bold)),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: double.infinity,
+                                decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(topRight:  Radius.circular(10), topLeft:  Radius.circular(10),  bottomRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10)),
+                                  color: Color.fromARGB(255, 61, 54, 54),
+                                ),
+
+                                // height: 10,
+                                // color: Color.fromARGB(255, 51, 47, 47),
+                                child: const TextField(
+                                  decoration: InputDecoration(
+                                    hintText: 'Search Live Channel',
+                                    hintStyle: TextStyle(
+                                      color:
+                                      Color.fromARGB(255, 230, 220, 220),
+                                      fontSize: 18,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                    prefixIcon: Icon(
+                                      Icons.search,
+                                      color:
+                                      Color.fromARGB(255, 36, 190, 126),
+                                    ),
+                                    // suffixIcon: Icon(Icons.camera_alt)
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 50,
+                                width: MediaQuery.of(context).size.width,
+                                padding: const EdgeInsets.only(
+                                    top: 20, bottom: 0, left: 10, right: 10),
+                                child: const Text(
+                                  'All',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ),
+                              ),
+                              Expanded (
+                                child: ListView.builder(
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: 8,
+                                  itemBuilder: (BuildContext ctx, int index) {
+                                    return Container(
+                                      padding: const EdgeInsets.only(
+                                          top: 10, bottom: 10, left: 0, right: 0),
+                                      child: SeriesCategory(),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         Container(
-                          child: const Center(
-                            child: Text('Display Tab 3',
-                                style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.amberAccent)),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: double.infinity,
+                                decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(topRight:  Radius.circular(0), topLeft:  Radius.circular(10),  bottomRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10)),
+                                  color: Color.fromARGB(255, 61, 54, 54),
+                                ),
+
+                                // height: 10,
+                                // color: Color.fromARGB(255, 51, 47, 47),
+                                child: const TextField(
+                                  decoration: InputDecoration(
+                                    hintText: 'Search series',
+                                    hintStyle: TextStyle(
+                                      color:
+                                      Color.fromARGB(255, 230, 220, 220),
+                                      fontSize: 18,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                    prefixIcon: Icon(
+                                      Icons.search,
+                                      color:
+                                      Color.fromARGB(255, 36, 190, 126),
+                                    ),
+                                    // suffixIcon: Icon(Icons.camera_alt)
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 50,
+                                width: MediaQuery.of(context).size.width,
+                                padding: const EdgeInsets.only(
+                                    top: 20, bottom: 0, left: 10, right: 10),
+                                child: const Text(
+                                  'All',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ),
+                              ),
+                              Expanded (
+                                child: ListView.builder(
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: 8,
+                                  itemBuilder: (BuildContext ctx, int index) {
+                                    return Container(
+                                      padding: const EdgeInsets.only(
+                                          top: 10, bottom: 10, left: 0, right: 0),
+                                      child: LiveCategory(),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        Container(
-                          child: Center(
-                            child: Text('Display Tab 4',
-                                style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.amberAccent)),
-                          ),
-                        ),
+
                       ])),
                 ])),
       ],

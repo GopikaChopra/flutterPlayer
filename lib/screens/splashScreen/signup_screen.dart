@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({Key? key}) : super(key: key);
   @override
-  _OnboardingScreenState createState() => _OnboardingScreenState();
+  _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _urlController = TextEditingController();
   final TextEditingController _linkController = TextEditingController();
@@ -82,7 +82,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Container(
                   padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                   //  alignment: Alignment.center,
@@ -97,12 +97,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             TextFormField(
-                              controller: _urlController,
+                              // controller: _urlController,
                               decoration: InputDecoration(
                                 contentPadding: const EdgeInsets.symmetric(
                                     vertical: 16, horizontal: 10),
 
-                                hintText: "Username",
+                                hintText: "First Name",
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12.0),
                                   borderSide: const BorderSide(
@@ -120,13 +120,82 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
                                 border: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(12)),
+                                  BorderRadius.all(Radius.circular(12)),
                                 ),
                                 filled: true, //<-- SEE HERE
                                 fillColor:
-                                    const Color.fromARGB(255, 232, 231, 233),
+                                const Color.fromARGB(255, 232, 231, 233),
                               ),
                             ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            TextFormField(
+                              // controller: _urlController,
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 16, horizontal: 10),
+
+                                hintText: "Last Name",
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(132, 175, 53, 10),
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(132, 175, 53, 10),
+                                  ),
+                                ),
+
+                                border: const OutlineInputBorder(
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
+                                ),
+                                filled: true, //<-- SEE HERE
+                                fillColor:
+                                const Color.fromARGB(255, 232, 231, 233),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            TextFormField(
+                              // controller: _urlController,
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 16, horizontal: 10),
+
+                                hintText: "Email",
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(132, 175, 53, 10),
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(132, 175, 53, 10),
+                                  ),
+                                ),
+
+                                border: const OutlineInputBorder(
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
+                                ),
+                                filled: true, //<-- SEE HERE
+                                fillColor:
+                                const Color.fromARGB(255, 232, 231, 233),
+                              ),
+                            ),
+
                             const SizedBox(
                               height: 20,
                             ),
@@ -155,7 +224,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
                                 border: const OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(12)),
+                                  BorderRadius.all(Radius.circular(12)),
                                 ),
                                 filled: true, //<-- SEE HERE
                                 fillColor: Color.fromARGB(255, 232, 231, 233),
@@ -163,14 +232,49 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               ),
                             ),
                             const SizedBox(
-                              height: 30,
+                              height: 20,
+                            ),
+                            TextFormField(
+                              // initialValue: "http://",
+                              // initialValue: ,
+                              controller: _linkController,
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 16, horizontal: 10),
+                                hintText: " Confirm Password",
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(132, 175, 53, 10),
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderSide: const BorderSide(
+                                    width: 2,
+                                    color: Color.fromRGBO(132, 175, 53, 10),
+                                  ),
+                                ),
+
+                                border: const OutlineInputBorder(
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
+                                ),
+                                filled: true, //<-- SEE HERE
+                                fillColor: Color.fromARGB(255, 232, 231, 233),
+                                // labelText: 'Enter EPG URL(Optional)',
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
                             ),
                             SizedBox(
                               width: double.infinity,
                               child: OutlinedButton(
                                 style: OutlinedButton.styleFrom(
                                   backgroundColor:
-                                      const Color.fromRGBO(132, 175, 53, 10),
+                                  const Color.fromRGBO(132, 175, 53, 10),
                                   padding: const EdgeInsets.all(15),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12.0),
@@ -192,19 +296,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     showDialog(
                                         context: context,
                                         builder: (_) => AlertDialog(
-                                              title: const Text('Error'),
-                                              content: const Text(
-                                                  'Please enter details'),
-                                              actions: [
-                                                TextButton(
-                                                  child: const Text('OK'),
-                                                  onPressed: () => Navigator.of(
-                                                          context,
-                                                          rootNavigator: true)
-                                                      .pop('dialog'),
-                                                )
-                                              ],
-                                            ));
+                                          title: const Text('Error'),
+                                          content: const Text(
+                                              'Please enter details'),
+                                          actions: [
+                                            TextButton(
+                                              child: const Text('OK'),
+                                              onPressed: () => Navigator.of(
+                                                  context,
+                                                  rootNavigator: true)
+                                                  .pop('dialog'),
+                                            )
+                                          ],
+                                        ));
                                     return;
                                   }
                                   _singIn();
