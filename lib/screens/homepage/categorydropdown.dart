@@ -40,9 +40,9 @@ class _MovieCategoryState extends State<MovieCategory> {
                 value: items,
                 child: Text(items,
                     style: TextStyle(
-                        color: Color.fromARGB(255, 238, 232, 232),
-                        // fontWeight: FontWeight.w500,
-                        fontSize: 18)),
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15)),
               );
             }).toList(),
             // After selecting the desired option,it will

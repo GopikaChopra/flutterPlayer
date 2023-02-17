@@ -16,7 +16,7 @@ class _ProfileComponentState extends State<ProfileComponent> {
       child: Stack(
         children: [
           Container(
-            height: 160,
+            height: 180,
             width: 140,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(12.0)),

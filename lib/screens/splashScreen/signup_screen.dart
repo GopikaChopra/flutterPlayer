@@ -63,18 +63,18 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     RichText(
                       text: const TextSpan(
-                        text: 'IPTV ',
+                        text: 'IPTV',
                         style: TextStyle(
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w400,
                             color: Colors.white,
-                            fontSize: 30),
+                            fontSize: 40),
                         children: <TextSpan>[
                           TextSpan(
                               text: 'FALCONS',
                               style: TextStyle(
                                   fontWeight: FontWeight.w900,
                                   color: Colors.white,
-                                  fontSize: 30)),
+                                  fontSize: 40)),
                         ],
                       ),
                     ),
@@ -96,71 +96,85 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            TextFormField(
-                              // controller: _urlController,
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 16, horizontal: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
 
-                                hintText: "First Name",
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: const BorderSide(
-                                    width: 2,
-                                    color: Color.fromRGBO(132, 175, 53, 10),
+                                Flexible(
+                                  child: TextFormField(
+                                    // controller: _urlController,
+                                    decoration: InputDecoration(
+                                      contentPadding: const EdgeInsets.symmetric(
+                                          vertical: 16, horizontal: 10),
+
+                                      hintText: "First Name",
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderSide: const BorderSide(
+                                          width: 2,
+                                          color: Color.fromRGBO(132, 175, 53, 10),
+                                        ),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderSide: const BorderSide(
+                                          width: 2,
+                                          color: Color.fromRGBO(132, 175, 53, 10),
+                                        ),
+                                      ),
+
+                                      border: const OutlineInputBorder(
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(12)),
+                                      ),
+                                      filled: true, //<-- SEE HERE
+                                      fillColor:
+                                      const Color.fromARGB(255, 232, 231, 233),
+                                    ),
                                   ),
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: const BorderSide(
-                                    width: 2,
-                                    color: Color.fromRGBO(132, 175, 53, 10),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Flexible(
+                                  child: TextFormField(
+                                    // controller: _urlController,
+                                    decoration: InputDecoration(
+                                      contentPadding: const EdgeInsets.symmetric(
+                                          vertical: 16, horizontal: 10),
+
+                                      hintText: "Last Name",
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderSide: const BorderSide(
+                                          width: 2,
+                                          color: Color.fromRGBO(132, 175, 53, 10),
+                                        ),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderSide: const BorderSide(
+                                          width: 2,
+                                          color: Color.fromRGBO(132, 175, 53, 10),
+                                        ),
+                                      ),
+
+                                      border: const OutlineInputBorder(
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(12)),
+                                      ),
+                                      filled: true, //<-- SEE HERE
+                                      fillColor:
+                                      const Color.fromARGB(255, 232, 231, 233),
+                                    ),
                                   ),
                                 ),
 
-                                border: const OutlineInputBorder(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(12)),
-                                ),
-                                filled: true, //<-- SEE HERE
-                                fillColor:
-                                const Color.fromARGB(255, 232, 231, 233),
-                              ),
+                              ],
+
                             ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            TextFormField(
-                              // controller: _urlController,
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 16, horizontal: 10),
 
-                                hintText: "Last Name",
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: const BorderSide(
-                                    width: 2,
-                                    color: Color.fromRGBO(132, 175, 53, 10),
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  borderSide: const BorderSide(
-                                    width: 2,
-                                    color: Color.fromRGBO(132, 175, 53, 10),
-                                  ),
-                                ),
 
-                                border: const OutlineInputBorder(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(12)),
-                                ),
-                                filled: true, //<-- SEE HERE
-                                fillColor:
-                                const Color.fromARGB(255, 232, 231, 233),
-                              ),
-                            ),
                             const SizedBox(
                               height: 20,
                             ),
@@ -283,11 +297,12 @@ class _SignupScreenState extends State<SignupScreen> {
                                       width: 1.0, color: Colors.grey),
                                 ),
                                 child: const Text(
-                                  "Log In",
+                                  "Sign up",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w800,
-                                      fontSize: 15.0),
+                                      fontSize: 15.0,
+                                  ),
                                 ),
                                 onPressed: () async {
                                   final url = _urlController.text;

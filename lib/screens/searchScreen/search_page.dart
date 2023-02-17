@@ -63,9 +63,9 @@ class _SearchPageState extends State<SearchPage> {
                       unselectedLabelColor:
                           Color.fromARGB(255, 233, 225, 225),
                       tabs: [
-                        Tab(text: 'Movies'),
-                        Tab(text: 'Web Series'),
-                        Tab(text: 'Live'),
+                        Tab(text: 'MOVIES'),
+                        Tab(text: 'WEB SERIES'),
+                        Tab(text: 'LIVE'),
                       ],
                     ),
                   ),
@@ -90,17 +90,16 @@ class _SearchPageState extends State<SearchPage> {
                                 // color: Color.fromARGB(255, 51, 47, 47),
                                 child: const TextField(
                                   decoration: InputDecoration(
-                                    hintText: 'search movies',
+                                    hintText: 'search movies...',
                                     hintStyle: TextStyle(
                                       color:
                                           Color.fromARGB(255, 230, 220, 220),
-                                      fontSize: 18,
-                                      fontStyle: FontStyle.italic,
+                                      fontSize: 15,
+                                      // fontStyle: FontStyle.italic,
                                     ),
                                     prefixIcon: Icon(
                                       Icons.search,
-                                      color:
-                                          Color.fromARGB(255, 36, 190, 126),
+                                      color: Color.fromRGBO(119, 178, 0, 10),
                                     ),
                                     // suffixIcon: Icon(Icons.camera_alt)
                                   ),
@@ -153,12 +152,12 @@ class _SearchPageState extends State<SearchPage> {
                                 // color: Color.fromARGB(255, 51, 47, 47),
                                 child: const TextField(
                                   decoration: InputDecoration(
-                                    hintText: 'Search Live Channel',
+                                    hintText: 'search web series...',
                                     hintStyle: TextStyle(
                                       color:
                                       Color.fromARGB(255, 230, 220, 220),
-                                      fontSize: 18,
-                                      fontStyle: FontStyle.italic,
+                                      fontSize: 15,
+                                      // fontStyle: FontStyle.italic,
                                     ),
                                     prefixIcon: Icon(
                                       Icons.search,
@@ -178,7 +177,7 @@ class _SearchPageState extends State<SearchPage> {
                                   'All',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    color: Colors.white,
                                     fontWeight: FontWeight.w600,
                                     fontSize: 15,
                                     decoration: TextDecoration.underline,
@@ -216,12 +215,12 @@ class _SearchPageState extends State<SearchPage> {
                                 // color: Color.fromARGB(255, 51, 47, 47),
                                 child: const TextField(
                                   decoration: InputDecoration(
-                                    hintText: 'Search series',
+                                    hintText: 'search live channel...',
                                     hintStyle: TextStyle(
                                       color:
-                                      Color.fromARGB(255, 230, 220, 220),
-                                      fontSize: 18,
-                                      fontStyle: FontStyle.italic,
+                                      Colors.white,
+                                      fontSize: 15,
+                                      // fontStyle: FontStyle.italic,
                                     ),
                                     prefixIcon: Icon(
                                       Icons.search,

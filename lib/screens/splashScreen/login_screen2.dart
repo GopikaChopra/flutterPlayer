@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   void initState() {
     super.initState();
-    _urlController.text = "http://";
+    _urlController.text = "";
   }
 
   @override
@@ -63,18 +64,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     RichText(
                       text: const TextSpan(
-                        text: 'IPTV ',
+                        text: 'IPTV',
                         style: TextStyle(
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w400,
                             color: Colors.white,
-                            fontSize: 30),
+                            fontSize: 40,
+                          fontFamily: "Proxima Nova - Black"
+                          // fontFamily: GoogleFonts.getFont('Sacramento'),
+
+                        ),
                         children: <TextSpan>[
                           TextSpan(
                               text: 'FALCONS',
                               style: TextStyle(
                                   fontWeight: FontWeight.w900,
                                   color: Colors.white,
-                                  fontSize: 30)),
+                                  fontSize: 40,
+                                  fontFamily: "Proxima Nova - Black"
+                              )),
                         ],
                       ),
                     ),
@@ -179,11 +186,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                       width: 1.0, color: Colors.grey),
                                 ),
                                 child: const Text(
-                                  "Log In",
+                                  "Sign In",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w800,
-                                      fontSize: 15.0),
+                                      fontSize: 18.0,
+                                  fontFamily: "Poppins"),
                                 ),
                                 onPressed: () async {
                                   final url = _urlController.text;

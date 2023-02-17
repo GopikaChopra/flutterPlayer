@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_player/widgets/movie_poster.dart';
-
 import 'categorydropdown.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -13,11 +11,11 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class _HomePageScreenState extends State<HomePageScreen> {
-  String dropdownvalue = 'Movies';
+  String dropdownvalue = 'MOVIES';
 
   // List of items in our dropdown menu
   final List<String> items = [
-    'Movies',
+    'MOVIES',
     'Live Channel',
     'Series',
   ];
@@ -45,8 +43,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 height: 40.h,
                 width: 100.w,
                 alignment: Alignment.center,
-                padding:
-                const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
                   border: Border.all(
@@ -71,8 +68,8 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         value: items,
                         child: Text(items,
                             style: const TextStyle(
-                                color: Color.fromARGB(255, 209, 201, 201),
-                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
                                 fontSize: 17)),
                       );
                     }).toList(),
@@ -313,14 +310,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           height: 50,
                           width: 350,
                           alignment: Alignment.center,
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          margin: EdgeInsets.only(top: 10),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
-                                color: Colors.grey,
-                                style: BorderStyle.solid,
-                                width: 0.5),
+                            borderRadius: BorderRadius.circular(20.0),
+
                           ),
                           child: Theme(
                             data: Theme.of(context).copyWith(
@@ -375,7 +368,8 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             width: 30,
                             margin: const EdgeInsets.only(top: 35, bottom: 35),
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 99, 167, 102),
+                              color: Color.fromRGBO(119, 178, 0, 10),
+                              // color: Color.fromARGB(119, 178, 0, 0),
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20),
@@ -439,7 +433,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             width: 30,
                             margin: const EdgeInsets.only(top: 35, bottom: 35),
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 99, 167, 102),
+                              color: Color.fromRGBO(119, 178, 0, 10),
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20),
@@ -503,7 +497,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             width: 30,
                             margin: const EdgeInsets.only(top: 35, bottom: 35),
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 99, 167, 102),
+                              color: Color.fromRGBO(119, 178, 0, 10),
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20),
@@ -567,7 +561,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             width: 30,
                             margin: const EdgeInsets.only(top: 35, bottom: 35),
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 99, 167, 102),
+                              color: Color.fromRGBO(119, 178, 0, 10),
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20),
