@@ -15,10 +15,11 @@ class _SearchMovieCategoryState extends State<SearchMovieCategory> {
     return Container(
       // height: 100,
       // color: Colors.cyan,
+
       child: Stack(
         children: [
           Container(
-            height: 65,
+            height: 60,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(12.0)),
@@ -26,7 +27,7 @@ class _SearchMovieCategoryState extends State<SearchMovieCategory> {
                 image: const AssetImage('assets/images/Layer_24.webp'),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
-                  Color.fromARGB(255, 12, 12, 12).withOpacity(0.6),
+                  Color.fromARGB(255, 12, 12, 12).withOpacity(0.7),
                   BlendMode.srcOver,
                 ),
               ),
@@ -36,10 +37,10 @@ class _SearchMovieCategoryState extends State<SearchMovieCategory> {
             padding: EdgeInsets.symmetric(vertical: 20),
             child: Center(
               child: Text(
-                "Action",
+                "ACTION",
                 style: TextStyle(
                     color: Colors.white.withOpacity(0.8),
-                    fontSize: 22.0,
+                    fontSize: 16.0,
                     height: 1.4,
                     fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,

@@ -22,15 +22,14 @@ class _LiveCategoryState extends State<LiveCategory> {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(12.0)),
-             color:  Color.fromARGB(255, 61, 54, 54)
-              // image: DecorationImage(
-              //   image: const AssetImage('assets/images/Layer_27.webp'),
-              //   fit: BoxFit.cover,
-              //   colorFilter: ColorFilter.mode(
-              //     Color.fromARGB(255, 12, 12, 12).withOpacity(0.5),
-              //     BlendMode.srcOver,
-              //   ),
-              // ),
+              image: DecorationImage(
+                image: const AssetImage('assets/images/live_layer_image.webp'),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                  Color.fromARGB(255, 12, 12, 12).withOpacity(0.5),
+                  BlendMode.srcOver,
+                ),
+              ),
             ),
           ),
           Padding(

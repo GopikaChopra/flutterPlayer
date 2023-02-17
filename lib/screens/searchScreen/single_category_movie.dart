@@ -53,10 +53,10 @@ class _SingleCategoryMoviesState extends State<SingleCategoryMovies> {
                         ),
 
                         const SizedBox(
-                          width: 70,
+                          width: 90,
                         ),
                         const Text("ANIMATION",style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),

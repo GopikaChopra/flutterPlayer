@@ -34,8 +34,8 @@ class _LiveChannelPosterState extends State<LiveChannelPoster> {
 
             children: [
               Container(
-                height: 40,
-                width: 40,
+                height: 45,
+                width: 35,
 margin: EdgeInsets.only(right: 15),
 // padding: EdgeInsets.only(right: 15),
                 // color: Colors.lime,

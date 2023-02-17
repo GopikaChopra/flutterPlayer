@@ -58,6 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Container(
             height: MediaQuery.of(context).size.height,
             color: const Color.fromARGB(255, 0, 0, 0),
-            child: const MovieScreenView())); //const ChooseProfile() //MovieScreenView //SingleLiveCategory //SingleCategoryMovies // SignupScreen
+            child: const LivePage())); //const ChooseProfile() //MovieScreenView //SingleLiveCategory //SingleCategoryMovies // SignupScreen
   }
 }

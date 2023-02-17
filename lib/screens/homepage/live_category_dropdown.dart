@@ -14,21 +14,17 @@ class _LiveCategoryDropdownState extends State<LiveCategoryDropdown> {
     'US',
     'UK',
     'Arts',
-    "Thriller",
-    "Comedy",
-    "Drama"
   ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
+
         color: const Color.fromARGB(84, 84, 84, 84),
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
             dropdownColor: Colors.grey[800],
-
             value: dropdownvalue,
-
             isExpanded: true,
             icon: const Icon(
               Icons.keyboard_arrow_down,
