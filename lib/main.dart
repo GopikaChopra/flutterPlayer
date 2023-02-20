@@ -10,6 +10,7 @@ import 'package:new_player/screens/profileScreen/profile_component.dart';
 import 'package:new_player/screens/searchScreen/live_category.dart';
 import 'package:new_player/screens/searchScreen/single_category_movie.dart';
 import 'package:new_player/screens/searchScreen/single_live_category.dart';
+import 'package:new_player/screens/settingScreen/settings_page.dart';
 import 'package:new_player/screens/splashScreen/login_screen2.dart';
 import 'package:new_player/screens/splashScreen/signup_screen.dart';
 
@@ -29,13 +30,23 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
+            initialRoute: "/",
+            getPages: [
+              GetPage(name: "/", page: ()=> const SettingsPage()),
+              // GetPage(name: "/", page: ()=> const MovieScreenView()),
+              GetPage(name: "/profile", page: ()=> const ChooseProfile()),
+              GetPage(name: "/signup", page: ()=> const SignupScreen()),
+              GetPage(name: "/login", page: ()=> const OnboardingScreen()),
+              // GetPage(name: "/signup", page: ()=> const SignupScreen()),
+
+            ],
             debugShowCheckedModeBanner: false,
             title: 'IPTVFavicon',
             theme: ThemeData(
               primarySwatch: Colors.blue,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
-            home: const MyHomePage(),
+            home: const SettingsPage(),
           );
         });
   }
@@ -58,6 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Container(
             height: MediaQuery.of(context).size.height,
             color: const Color.fromARGB(255, 0, 0, 0),
-            child: const LivePage())); //const ChooseProfile() //MovieScreenView //SingleLiveCategory //SingleCategoryMovies // SignupScreen
+            child: const SettingsPage())); //const ChooseProfile() //MovieScreenView //SingleLiveCategory //SingleCategoryMovies // SignupScreen
   }
 }

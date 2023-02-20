@@ -18,7 +18,7 @@ class _LiveCategoryState extends State<LiveCategory> {
       child: Stack(
         children: [
           Container(
-            height: 60,
+            height: 65,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(12.0)),

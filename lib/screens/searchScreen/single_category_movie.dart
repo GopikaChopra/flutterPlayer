@@ -40,10 +40,7 @@ class _SingleCategoryMoviesState extends State<SingleCategoryMovies> {
                         ),
                         InkWell(
                           onTap: (){
-                            // print("tapped");
-                            Navigator.pushReplacement(
-                              context,MaterialPageRoute(builder: (context) => MovieScreenView() //here pass the actual values of these variables, for example false if the payment isn't successfull..etc
-                            ),);
+                            Navigator.pop(context);
                             },
                           child: const  Icon(
                             Icons.arrow_back_ios_new_outlined,
