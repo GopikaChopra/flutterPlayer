@@ -26,19 +26,13 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
             child: ListView(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                       top: 15, bottom: 0, left: 15, right: 15),
                   // padding: const EdgeInsets.all(10),
                   child: Container(
-
                       height: 120,
                       // color: Colors.amberAccent,
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width,
-
-
+                      width: MediaQuery.of(context).size.width,
                       child: const Center(
                         child: Text(
                           "SEARCH",
@@ -58,8 +52,7 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           Container(
-                            padding:
-                            EdgeInsets.symmetric(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: 30, vertical: 0),
                             child: const TabBar(
                               indicator: ShapeDecoration(
@@ -68,16 +61,11 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                           topRight: Radius.circular(10),
                                           topLeft: Radius.circular(10),
                                           bottomRight: Radius.circular(0),
-                                          bottomLeft: Radius.circular(0)
-                                      )
-                                  ),
-                                  color: Color.fromARGB(255, 61, 54, 54)
-                              ),
-
-                              labelColor: Color.fromARGB(
-                                  255, 227, 236, 228),
+                                          bottomLeft: Radius.circular(0))),
+                                  color: Color.fromARGB(255, 61, 54, 54)),
+                              labelColor: Color.fromARGB(255, 227, 236, 228),
                               unselectedLabelColor:
-                              Color.fromARGB(255, 233, 225, 225),
+                                  Color.fromARGB(255, 233, 225, 225),
                               tabs: [
                                 Tab(text: 'MOVIES'),
                                 Tab(text: 'WEB SERIES'),
@@ -86,14 +74,10 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                             ),
                           ),
                           Container(
-                              padding:
-                              EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 30, vertical: 0),
                               height: 700,
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width,
+                              width: MediaQuery.of(context).size.width,
                               child: TabBarView(children: <Widget>[
                                 Container(
                                   child: Column(
@@ -102,15 +86,12 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                         width: double.infinity,
                                         decoration: const BoxDecoration(
                                           borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(
-                                                  10),
+                                              topRight: Radius.circular(10),
                                               topLeft: Radius.circular(0),
-                                              bottomRight: Radius
-                                                  .circular(10),
-                                              bottomLeft: Radius.circular(
-                                                  10)),
-                                          color: Color.fromARGB(
-                                              255, 61, 54, 54),
+                                              bottomRight: Radius.circular(10),
+                                              bottomLeft: Radius.circular(10)),
+                                          color:
+                                              Color.fromARGB(255, 61, 54, 54),
                                         ),
 
                                         // height: 10,
@@ -119,8 +100,7 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                           decoration: InputDecoration(
                                             hintText: 'search movies...',
                                             hintStyle: TextStyle(
-                                              color:
-                                              Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 230, 220, 220),
                                               fontSize: 15,
                                               // fontStyle: FontStyle.italic,
@@ -136,10 +116,8 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                       ),
                                       Container(
                                         height: 50,
-                                        width: MediaQuery
-                                            .of(context)
-                                            .size
-                                            .width,
+                                        width:
+                                            MediaQuery.of(context).size.width,
                                         padding: const EdgeInsets.only(
                                             top: 20,
                                             bottom: 0,
@@ -153,8 +131,8 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                                 255, 255, 255, 255),
                                             fontWeight: FontWeight.w600,
                                             fontSize: 15,
-                                            decoration: TextDecoration
-                                                .underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                         ),
                                       ),
@@ -163,17 +141,19 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                           // physics: BouncingScrollPhysics(),
                                           scrollDirection: Axis.vertical,
                                           itemCount: 8,
-                                          itemBuilder: (BuildContext ctx,
-                                              int index) {
+                                          itemBuilder:
+                                              (BuildContext ctx, int index) {
                                             return Container(
-                                              padding: const EdgeInsets
-                                                  .only(
+                                              padding: const EdgeInsets.only(
                                                   top: 10,
                                                   bottom: 10,
                                                   left: 0,
                                                   right: 0),
                                               child: InkWell(
-                                                  onTap: (){ Navigator.pushNamed(context, "/books2");},
+                                                  onTap: () {
+                                                    Navigator.pushNamed(
+                                                        context, "/books2");
+                                                  },
                                                   child: SearchMovieCategory()),
                                             );
                                           },
@@ -189,16 +169,12 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                         width: double.infinity,
                                         decoration: const BoxDecoration(
                                           borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(
-                                                  10),
-                                              topLeft: Radius.circular(
-                                                  10),
-                                              bottomRight: Radius
-                                                  .circular(10),
-                                              bottomLeft: Radius.circular(
-                                                  10)),
-                                          color: Color.fromARGB(
-                                              255, 61, 54, 54),
+                                              topRight: Radius.circular(10),
+                                              topLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(10),
+                                              bottomLeft: Radius.circular(10)),
+                                          color:
+                                              Color.fromARGB(255, 61, 54, 54),
                                         ),
 
                                         // height: 10,
@@ -207,16 +183,14 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                           decoration: InputDecoration(
                                             hintText: 'search web series...',
                                             hintStyle: TextStyle(
-                                              color:
-                                              Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 230, 220, 220),
                                               fontSize: 15,
                                               // fontStyle: FontStyle.italic,
                                             ),
                                             prefixIcon: Icon(
                                               Icons.search,
-                                              color:
-                                              Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 36, 190, 126),
                                             ),
                                             // suffixIcon: Icon(Icons.camera_alt)
@@ -225,10 +199,8 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                       ),
                                       Container(
                                         height: 50,
-                                        width: MediaQuery
-                                            .of(context)
-                                            .size
-                                            .width,
+                                        width:
+                                            MediaQuery.of(context).size.width,
                                         padding: const EdgeInsets.only(
                                             top: 20,
                                             bottom: 0,
@@ -241,8 +213,8 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                             color: Colors.white,
                                             fontWeight: FontWeight.w600,
                                             fontSize: 15,
-                                            decoration: TextDecoration
-                                                .underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                         ),
                                       ),
@@ -250,18 +222,20 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                         child: ListView.builder(
                                           scrollDirection: Axis.vertical,
                                           itemCount: 8,
-                                          itemBuilder: (BuildContext ctx,
-                                              int index) {
+                                          itemBuilder:
+                                              (BuildContext ctx, int index) {
                                             return Container(
-                                              padding: const EdgeInsets
-                                                  .only(
+                                              padding: const EdgeInsets.only(
                                                   top: 10,
                                                   bottom: 10,
                                                   left: 0,
                                                   right: 0),
-                                                child:  InkWell(
-                                                    onTap: (){ Navigator.pushNamed(context, "/singlelivecategory");},
-                                                    child: SeriesCategory()),
+                                              child: InkWell(
+                                                  onTap: () {
+                                                    Navigator.pushNamed(context,
+                                                        "/singlelivecategory");
+                                                  },
+                                                  child: SeriesCategory()),
                                               // child: SeriesCategory(),
                                             );
                                           },
@@ -277,16 +251,12 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                         width: double.infinity,
                                         decoration: const BoxDecoration(
                                           borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(
-                                                  0),
-                                              topLeft: Radius.circular(
-                                                  10),
-                                              bottomRight: Radius
-                                                  .circular(10),
-                                              bottomLeft: Radius.circular(
-                                                  10)),
-                                          color: Color.fromARGB(
-                                              255, 61, 54, 54),
+                                              topRight: Radius.circular(0),
+                                              topLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(10),
+                                              bottomLeft: Radius.circular(10)),
+                                          color:
+                                              Color.fromARGB(255, 61, 54, 54),
                                         ),
 
                                         // height: 10,
@@ -295,15 +265,13 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                           decoration: InputDecoration(
                                             hintText: 'search live channel...',
                                             hintStyle: TextStyle(
-                                              color:
-                                              Colors.white,
+                                              color: Colors.white,
                                               fontSize: 15,
                                               // fontStyle: FontStyle.italic,
                                             ),
                                             prefixIcon: Icon(
                                               Icons.search,
-                                              color:
-                                              Color.fromARGB(
+                                              color: Color.fromARGB(
                                                   255, 36, 190, 126),
                                             ),
                                             // suffixIcon: Icon(Icons.camera_alt)
@@ -312,10 +280,8 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                       ),
                                       Container(
                                         height: 50,
-                                        width: MediaQuery
-                                            .of(context)
-                                            .size
-                                            .width,
+                                        width:
+                                            MediaQuery.of(context).size.width,
                                         padding: const EdgeInsets.only(
                                             top: 20,
                                             bottom: 0,
@@ -329,8 +295,8 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                                 255, 255, 255, 255),
                                             fontWeight: FontWeight.w600,
                                             fontSize: 15,
-                                            decoration: TextDecoration
-                                                .underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                         ),
                                       ),
@@ -338,27 +304,29 @@ class _SearchCategoryPageState extends State<SearchCategoryPage> {
                                         child: ListView.builder(
                                           scrollDirection: Axis.vertical,
                                           itemCount: 8,
-                                          itemBuilder: (BuildContext ctx,
-                                              int index) {
+                                          itemBuilder:
+                                              (BuildContext ctx, int index) {
                                             return Container(
-                                              padding: const EdgeInsets
-                                                  .only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                  left: 0,
-                                                  right: 0),
-                                                child:  InkWell(
-                                                    onTap: (){ Navigator.pushNamed(context, "/singlelivecategory");},
+                                                padding: const EdgeInsets.only(
+                                                    top: 10,
+                                                    bottom: 10,
+                                                    left: 0,
+                                                    right: 0),
+                                                child: InkWell(
+                                                    onTap: () {
+                                                      Navigator.pushNamed(
+                                                          context,
+                                                          "/singlelivecategory");
+                                                    },
                                                     child: LiveCategory())
-                                              // child: LiveCategory(),
-                                            );
+                                                // child: LiveCategory(),
+                                                );
                                           },
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
-
                               ])),
                         ])),
               ],

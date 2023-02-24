@@ -10,7 +10,7 @@ packages:
     source: hosted
     version: "2.10.0"
   better_player:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: better_player
       sha256: f2e5d57ea49fb7c4d93838d23846ca5ddf78af6f946e103aeacf2afdd01909b3

@@ -16,14 +16,10 @@ class _MovieViewIndexState extends State<MovieViewIndex> {
     return Container(
       color: Colors.black,
       child: CustomScrollView(
-
         slivers: <Widget>[
-
-
           SliverToBoxAdapter(
             child: Column(
               children: [
-
                 // Row(
                 //   mainAxisAlignment: MainAxisAlignment.center,
                 //   children: [
@@ -57,8 +53,8 @@ class _MovieViewIndexState extends State<MovieViewIndex> {
                       width: 350,
                       alignment: Alignment.center,
                       margin: EdgeInsets.only(top: 15),
-                      padding:
-                      const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 0, vertical: 0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12.0),
                         border: Border.all(
@@ -72,7 +68,7 @@ class _MovieViewIndexState extends State<MovieViewIndex> {
                                 245), // background color for the dropdown items
                             buttonTheme: ButtonTheme.of(context).copyWith(
                               alignedDropdown:
-                              true, //If false (the default), then the dropdown's menu will be wider than its button.
+                                  true, //If false (the default), then the dropdown's menu will be wider than its button.
                             )),
                         child: const MovieCategory(),
                       ),
@@ -95,6 +91,7 @@ class _MovieViewIndexState extends State<MovieViewIndex> {
                       ),
                       height: 210,
                       child: ListView.builder(
+                        physics: const BouncingScrollPhysics(),
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         itemCount: 50,
@@ -105,8 +102,7 @@ class _MovieViewIndexState extends State<MovieViewIndex> {
                                   top: 0,
                                   right: 0,
                                   bottom: 15),
-                              child: const MoviePoster()
-                          );
+                              child: const MoviePoster());
                         },
                       ),
                     ),
@@ -167,7 +163,8 @@ class _MovieViewIndexState extends State<MovieViewIndex> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(14),
                               image: const DecorationImage(
-                                image: AssetImage('assets/images/movieposter4.webp'),
+                                image: AssetImage(
+                                    'assets/images/movieposter4.webp'),
                                 fit: BoxFit.fill,
                               ),
                             ),
@@ -231,7 +228,8 @@ class _MovieViewIndexState extends State<MovieViewIndex> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(14),
                               image: const DecorationImage(
-                                image: AssetImage('assets/images/movieposter2.webp'),
+                                image: AssetImage(
+                                    'assets/images/movieposter2.webp'),
                                 fit: BoxFit.fill,
                               ),
                             ),
@@ -295,7 +293,8 @@ class _MovieViewIndexState extends State<MovieViewIndex> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(14),
                               image: const DecorationImage(
-                                image: AssetImage('assets/images/movieposter3.webp'),
+                                image: AssetImage(
+                                    'assets/images/movieposter3.webp'),
                                 fit: BoxFit.fill,
                               ),
                             ),

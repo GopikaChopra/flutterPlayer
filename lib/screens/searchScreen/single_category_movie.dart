@@ -13,7 +13,6 @@ class SingleCategoryMovies extends StatefulWidget {
 }
 
 class _SingleCategoryMoviesState extends State<SingleCategoryMovies> {
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,75 +27,69 @@ class _SingleCategoryMoviesState extends State<SingleCategoryMovies> {
                 fit: BoxFit.fill,
               ),
             ),
-
-              child:  Padding(
-                padding: const EdgeInsets.only(top: 80),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        const SizedBox(
-                          width: 30,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 80),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 30,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Icon(
+                          Icons.arrow_back_ios_new_outlined,
+                          color: Colors.white,
+                          // size: 36.0,
                         ),
-                        InkWell(
-                          onTap: (){
-                            Navigator.pop(context);
-                            },
-                          child: const  Icon(
-                            Icons.arrow_back_ios_new_outlined,
-                            color: Colors.white,
-                            // size: 36.0,
-                          ),
-                        ),
-
-                        const SizedBox(
-                          width: 90,
-                        ),
-                        const Text("ANIMATION",style: TextStyle(
+                      ),
+                      const SizedBox(
+                        width: 90,
+                      ),
+                      const Text(
+                        "ANIMATION",
+                        style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-
-                    ),
-
-                    Expanded(
-                      child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
-                          child: GridView.count(
-                              crossAxisCount: 3,
-                              crossAxisSpacing: 15.0,
-                              mainAxisSpacing: 15.0,
-                              shrinkWrap: true,
-                              childAspectRatio: (200 / 300),
-                              children: [
-                                ...List.generate(
-                                  25,
-                                      (index) {
-                                    return Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 1.0),
-                                      child: Container(
-                                          child: const MoviePoster()
-                                      ),
-                                    );
-                                  },
-                                ),
-
-                              ])
-
+                        textAlign: TextAlign.center,
                       ),
-                    ),
-
-                  ],
-                ),
+                    ],
+                  ),
+                  Expanded(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 25, vertical: 25),
+                        child: GridView.count(
+                            physics: const BouncingScrollPhysics(),
+                            crossAxisCount: 3,
+                            crossAxisSpacing: 15.0,
+                            mainAxisSpacing: 15.0,
+                            shrinkWrap: true,
+                            childAspectRatio: (200 / 300),
+                            children: [
+                              ...List.generate(
+                                25,
+                                (index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 1.0),
+                                    child:
+                                        Container(child: const MoviePoster()),
+                                  );
+                                },
+                              ),
+                            ])),
+                  ),
+                ],
               ),
+            ),
           ),
-
         ),
-
       ],
     );
   }
