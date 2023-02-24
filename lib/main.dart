@@ -13,6 +13,8 @@ import 'package:new_player/screens/searchScreen/single_live_category.dart';
 import 'package:new_player/screens/settingScreen/settings_page.dart';
 import 'package:new_player/screens/splashScreen/login_screen2.dart';
 import 'package:new_player/screens/splashScreen/signup_screen.dart';
+import 'package:new_player/widgets/live_player.dart';
+import 'package:new_player/widgets/video_player.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             initialRoute: "/",
             getPages: [
-              GetPage(name: "/", page: ()=> const SettingsPage()),
+              GetPage(name: "/", page: ()=> const LiveVideoPlayer()),
               // GetPage(name: "/", page: ()=> const MovieScreenView()),
               GetPage(name: "/profile", page: ()=> const ChooseProfile()),
               GetPage(name: "/signup", page: ()=> const SignupScreen()),
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.blue,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
-            home: const SettingsPage(),
+            home: const LiveVideoPlayer(),
           );
         });
   }
@@ -69,6 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Container(
             height: MediaQuery.of(context).size.height,
             color: const Color.fromARGB(255, 0, 0, 0),
-            child: const SettingsPage())); //const ChooseProfile() //MovieScreenView //SingleLiveCategory //SingleCategoryMovies // SignupScreen
+            child: const LiveVideoPlayer())); //const ChooseProfile() //MovieScreenView //SingleLiveCategory //SingleCategoryMovies // SignupScreen
   }
 }
