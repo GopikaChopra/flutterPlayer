@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:new_player/screens/homepage/categorydropdown.dart';
 import 'package:new_player/widgets/movie_poster.dart';
 

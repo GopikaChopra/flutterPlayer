@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:miniplayer/miniplayer.dart';
 
-import 'package:new_player/screens/homepage/categorydropdown.dart';
 import 'package:new_player/screens/downloadScreen/downloads_page.dart';
 import 'package:new_player/screens/homepage/homepage.dart';
 import 'package:new_player/screens/searchScreen/search_page.dart';
 import 'package:new_player/screens/settingScreen/settings_page.dart';
+import 'package:new_player/screens/videoScreen/video_screen.dart';
+import 'package:new_player/utils/video_providers.dart';
 
-class MovieScreenView extends StatefulWidget {
+final miniPlayHeight = StateProvider((ref) => 0.0);
+final miniPlayPercent = StateProvider((ref) => 0.0);
+
+class MovieScreenView extends ConsumerStatefulWidget {
   const MovieScreenView({super.key});
 
   @override
-  State<MovieScreenView> createState() => _MovieScreenViewState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _MovieScreenViewState();
 }
 
-class _MovieScreenViewState extends State<MovieScreenView> {
+class _MovieScreenViewState extends ConsumerState<MovieScreenView> {
   String dropdownvalue = 'Movies';
 
   // List of items in our dropdown menu
@@ -25,36 +32,37 @@ class _MovieScreenViewState extends State<MovieScreenView> {
   ];
   int selectedIndex = 0;
 
-
-
-  Map<int ,List<Widget>> pages={
-    0:[const HomePageScreen(),Text("necghcghchj",style: TextStyle(
-      color: Colors.white,
-      fontSize: 40
-    ),)],
-    1:[const Text("dfs")],
-    2:[const DownloadPage(),],
-    3:[const SettingsPage(),],
-
-  };
-
-
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
-    // print(pages[selectedIndex]![pages[selectedIndex]!.length-1]);
+    final miniPlayController = ref.watch(miniPlayerController);
+
+    final isVideoPlaying = ref.watch(isVideoPlayingController);
+
     return Scaffold(
         backgroundColor: Colors.black,
-        
-        body: screens[selectedIndex],// pages[selectedIndex]![pages[selectedIndex]!.length-1],//     screens[selectedIndex],          // pages[selectedIndex]![pages[selectedIndex]!.length-1],                       //,
+        body: SafeArea(
+          child: Stack(
+            children: <Widget>[
+              screens[selectedIndex],
+              Offstage(
+                offstage: !isVideoPlaying,
+                child: Miniplayer(
+                  controller: miniPlayController,
+                  minHeight: 70,
+                  maxHeight: MediaQuery.of(context).size.height,
+                  builder: (height, percentage) {
+                    return VideoPlayerScreen(
+                      miniPlayerHeight: height,
+                      miniPlayerHeightPercent: percentage,
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          // backgroundColor:Color.fromARGB(100, 22, 44, 33),
           backgroundColor: Colors.black.withOpacity(0.9),
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white.withOpacity(.60),
