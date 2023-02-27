@@ -6,6 +6,7 @@ import 'package:new_player/screens/homepage/homepage.dart';
 import 'package:new_player/screens/movie_screen_view.dart';
 
 import 'package:new_player/screens/profileScreen/choose_profile.dart';
+import 'package:new_player/screens/settingScreen/settings_page.dart';
 
 import 'package:new_player/screens/splashScreen/login_screen2.dart';
 import 'package:new_player/screens/splashScreen/signup_screen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             getPages: [
               GetPage(
                   name: "/",
-                  page: () => const MovieScreenView()), //const VideoPlayer()),
+                  page: () =>      const MovieScreenView()) , //const VideoPlayer()),  //MovieScreenView
               GetPage(name: "/profile", page: () => const ChooseProfile()),
               GetPage(name: "/signup", page: () => const SignupScreen()),
               GetPage(name: "/login", page: () => const OnboardingScreen()),

@@ -9,6 +9,6 @@ final miniPlayerController = Provider((ref) => MiniplayerController());
 
 final betterPlayerController = StateProvider<BetterPlayerController>((ref) =>
     VideoPlayerController.liveVideoController(
-        "http://live.roomba.tv/live/achhar.developer@gmail.com/3hSdCcZFs8/1383043.ts"));
+        "http://live.roomba.tv/live/achhar.developer@gmail.com/3hSdCcZFs8/1383042.ts"));
 
 final isVideoPlayingController = StateProvider((ref) => false);
