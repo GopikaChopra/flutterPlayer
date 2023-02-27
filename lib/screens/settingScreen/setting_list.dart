@@ -6,28 +6,28 @@ import 'package:flutter/src/widgets/placeholder.dart';
 class SettingList extends StatefulWidget {
   const SettingList({
     super.key,
-  required this.version,
-    required this.user,
-    required this.registerDate,
-    required this.expirationDate,
-    required this.reseller,
-    required this.resellerWebsite,
-    required this.accountType,
-    required this.ip,
-    required this.country,
+  // required this.version,
+  //   required this.user,
+  //   required this.registerDate,
+  //   required this.expirationDate,
+  //   required this.reseller,
+  //   required this.resellerWebsite,
+  //   required this.accountType,
+  //   required this.ip,
+  //   required this.country,
 
   });
 
 
-  final int version;
-  final String user;
-  final String registerDate;
-  final String expirationDate;
-  final String reseller;
-  final String resellerWebsite;
-  final String accountType;
-  final int ip;
-  final String country;
+  // final int version;
+  // final String user;
+  // final String registerDate;
+  // final String expirationDate;
+  // final String reseller;
+  // final String resellerWebsite;
+  // final String accountType;
+  // final int ip;
+  // final String country;
 
   
   @override
