@@ -13,28 +13,10 @@ class VideoPlayer extends ConsumerStatefulWidget {
 }
 
 class _VideoPlayerState extends ConsumerState<ConsumerStatefulWidget> {
-  BetterPlayerController testController =
-      BetterPlayerController(BetterPlayerConfiguration());
-
   @override
   void initState() {
     super.initState();
-    testController = BetterPlayerController(
-      const BetterPlayerConfiguration(
-        aspectRatio: 16 / 9,
-        fit: BoxFit.contain,
-      ),
-      betterPlayerDataSource: BetterPlayerDataSource(
-          BetterPlayerDataSourceType.network,
-          "http://live.roomba.tv/live/achhar.developer@gmail.com/3hSdCcZFs8/1383042.ts",
-          bufferingConfiguration: const BetterPlayerBufferingConfiguration(
-            minBufferMs: 5000,
-            maxBufferMs: 15000,
-            bufferForPlaybackMs: 3000,
-            bufferForPlaybackAfterRebufferMs: 5000,
-          ),
-          liveStream: true),
-    );
+
     setState(() {});
   }
 
